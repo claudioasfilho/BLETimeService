@@ -29,8 +29,7 @@
 #include "app.h"
 #include "calendar.h"
 
-#define SEC_TIMER_HANDLE (1)
-#define MINUTE_TIMER_HANDLE (2)
+
 
 // Print boot message
 static void bootMessage(struct gecko_msg_system_boot_evt_t *bootevt);
@@ -57,7 +56,7 @@ void appMain(gecko_configuration_t *pconfig)
   /* Initialize stack */
   gecko_init(pconfig);
 
-  set_date_and_time(2019, JULY, 30, TUESDAY, 14, 28, 00, 000);
+  set_date_and_time(2020, MAY, 18, MONDAY, 9, 45, 00, 000);
   set_time_zone(4);
   set_dst(0);
 
@@ -102,6 +101,7 @@ void appMain(gecko_configuration_t *pconfig)
 
         if (evt->data.evt_hardware_soft_timer.handle == SEC_TIMER_HANDLE) {
           application_task();
+          GPIO_PinOutToggle(BSP_LED0_PORT, BSP_LED0_PIN);
         } else if (evt->data.evt_hardware_soft_timer.handle == MINUTE_TIMER_HANDLE) {
           update_calendar();
         }

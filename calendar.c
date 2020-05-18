@@ -169,7 +169,7 @@ void application_task()
 
   printf("%4d-%02d-%02d %02d:%02d:%02d.%03d %s   uptime: %03d-%02d:%02d:%02d.%03d -awake \n\r", year, month, day, hour, min, sec, ms, weekdays[weekday-1], updays, uphours, upmins, upsec, upms);
 
- // GPIO_PinOutToggle(BSP_LED0_PORT, BSP_LED0_PIN);
+ //
 }
 
 void get_date_and_time(uint16_t* year,

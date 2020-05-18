@@ -16,6 +16,8 @@ extern "C" {
 #include "native_gecko.h"
 
 #define TICKS_PER_SECOND (32768)
+#define SEC_TIMER_HANDLE (254)
+#define MINUTE_TIMER_HANDLE (253)
 
 static const char* weekdays[] = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
 
